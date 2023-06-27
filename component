@@ -1,0 +1,37 @@
+import React , {useState,useEffect}from 'react'
+
+const Usestateanduseeffect = () => {
+  
+  const[gold,setGold]=useState(0);// gold=0 1
+  const[silver,setSilver]=useState(0);// silver=0 1 
+
+useEffect(()=>{
+  console.log("display");
+document.title=`gold:${gold},silver:${silver}`  
+},[silver]);
+
+const increseGold =()=>{
+  setGold(gold+1);
+  console.log(`gold pressed:${gold}`);
+
+}
+
+const increseSilver=()=>{
+  setSilver(silver+1);
+  console.log(`silver pressed${silver}`);
+
+}
+
+  return (
+    <div>
+      <h1>Gold:{gold}</h1>
+      <button onClick={increseGold}>Gold</button>
+
+      <h1>silver:{silver}</h1>
+      <button onClick={increseSilver}>silver</button>
+
+    </div>
+  )
+}
+
+export default Usestateanduseeffect
